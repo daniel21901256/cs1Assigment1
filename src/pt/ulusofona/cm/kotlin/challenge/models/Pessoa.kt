@@ -25,17 +25,15 @@ import java.util.*
     }
 
     fun venderVeiculo(identificador : String, comprador:Pessoa) {
-       try {
+
            var veiculo = pesquisarVeiculo(identificador)
            comprador.comprarVeiculo(veiculo)
            veiculos.remove(veiculo)
-       }catch (e : VeiculoNaoEncontradoException){
-           println(e.message)
-       }
+
     }
 
     fun moverVeiculoPara(identificador:String, x:Int, y:Int){
-        try{
+
            var veiculo = pesquisarVeiculo(identificador)
            estouPerto(veiculo.posicao)
            if(veiculo.requerCarta() && temCarta()){
@@ -53,16 +51,6 @@ import java.util.*
                veiculo.moverPara(x,y)
                moverPara(x,y)
            }
-
-        }catch (e : VeiculoNaoEncontradoException){
-            println(e.message)
-        }catch (e : AlterarPosicaoException){
-            println(e.message)
-        }catch (e : PessoaSemCartaException){
-            println(e.message)
-        }catch (e : PessoaLongeVeiculoException){
-            println(e.message)
-        }
     }
 
     fun estouPerto(posicao2: Posicao):Boolean{
@@ -78,13 +66,10 @@ import java.util.*
     }
 
     fun tirarCarta(){
-        try {
             if (calcularMaiorDeIdade(dataDeNascimento)) {
                 carta = Carta()
             }
-        }catch (e : MenorDeIdadeException){
-            println(e.message)
-        }
+
     }
 
     fun calcularMaiorDeIdade(birthday: Date):Boolean{
