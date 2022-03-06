@@ -68,6 +68,8 @@ import java.util.*
     fun tirarCarta(){
             if (calcularMaiorDeIdade(dataDeNascimento)) {
                 carta = Carta()
+            }else{
+                throw MenorDeIdadeException("$nome é menor de idade")
             }
 
     }
@@ -85,7 +87,7 @@ import java.util.*
                 }
             }
         }
-        throw MenorDeIdadeException("$nome é menor de idade")
+        return false
     }
 
      var nascimento = String.format("%02d-%02d-%02d",dataDeNascimento.date,dataDeNascimento.month,dataDeNascimento.year)

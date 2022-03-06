@@ -9,5 +9,7 @@ fun main(){
   var motor = Motor(222,2222)
   var carro : Carro = Carro("askldhajshd",motor)
   vigarista.comprarVeiculo(carro)
+  vigarista.tirarCarta()
   vigarista.moverVeiculoPara("askldhajshd",10,10)
+  vigarista.moverPara(10,10)
 }
